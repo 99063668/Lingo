@@ -10,16 +10,14 @@ function createButtons(amount){
      var button = document.createElement("button"); 
      button.classList.add("button")
      button.id = "button" + a; 
-     button.innerHTML = "" + a; 
+     button.innerHTML = input; 
      container.appendChild(button);
   }
 }
-//Page + Buttons
 
-
+//---------------------------------------------------------------------------------------------------------------------------\\
 
 //Check word
-var Word = "appel";
 var CheckWord = document.getElementById("CheckWord");
 var Check = document.getElementById("Check");
 var text = document.getElementById("Text");
@@ -49,4 +47,7 @@ function CheckInput() {
     alert('Een nummer is geen geldige invoer!');
   }
 }
-//Check word
+
+//---------------------------------------------------------------------------------------------------------------------------\\
+
+//Change button color
