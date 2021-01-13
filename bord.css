@@ -2,46 +2,19 @@ body{
     background-color: grey;
 }
 
-#container{
-    bottom: 50px;
-    padding: 82px;
-    margin: auto;
+#Main{
+    margin: 0 auto;
     width: 800px;
-    height:15px;
+}
+
+#container{
     background-color: rgb(103, 235, 63);
     border: 2px solid black;
-    position: relative;
 }
 
-#buttons{
-    margin-bottom: 30px;
-}
-
-button{
+#container2{
+    background-color: white;
     border: 2px solid black;
-    color: black;
-    padding: 40px 35px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px 4px;
-    cursor: pointer;
-    width: 140px;
-    height: 50px;
-}
-    
-.button {
-   background-color: white;
-}
-
-label{
-    text-align:left;
-    width:150px;
-    display:block;
-    float:left;
-    clear:right;
-    font-size:18;
 }
 
 #CheckWord{
@@ -64,4 +37,8 @@ label{
     text-decoration: none;
     display: inline-block;
     font-size: 12px;
+}
+
+.letter{
+
 }
