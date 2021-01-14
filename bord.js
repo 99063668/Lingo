@@ -23,7 +23,7 @@ function page() {
 
   createBoard(aantal_rijen, aantal_letters);
 }
-   
+
 
 //Make rows
 function createBoard(aantal_rijen, aantal_letters){
@@ -67,12 +67,12 @@ Check.addEventListener("keyup", function(event){
   }
 });
 
-"honde"
+
 //Check the user input
 function CheckInput() {
   input = Check.value;
   /*console.log(CheckInput);*/
-  if(isNaN(input)){
+  if(input.length ===5) {
     for (var i=0; i<word1.length; i++){
       var letter2 = word1.charAt(i);
       var letter = input.charAt(i);
@@ -80,6 +80,9 @@ function CheckInput() {
     }
     rij_nummer++;
   } else {
-    alert('Een nummer is geen geldige invoer!'); 
+    alert('Geen geldige invoer! Alleen 5 letter woorden zijn toegestaan.'); 
   }
 }
+
+
+/*document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).firstElementChild.innerHTML=word1[0];*/
