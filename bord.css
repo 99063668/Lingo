@@ -1,19 +1,13 @@
-body{
-    background-color: grey;
-}
-
 #Main{
     margin: 0 auto;
     width: 800px;
 }
 
 #container{
-    background-color: rgb(103, 235, 63);
     border: 2px solid black;
 }
 
 #container2{
-    background-color: white;
     border: 2px solid black;
 }
 
@@ -40,5 +34,14 @@ body{
 }
 
 .letter{
-
+    height:50px;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    margin-right: 3%;
+    margin-left: 2.5%;
+    padding: 50px;
+    box-sizing:border-box;
+    display:inline-block;
+    border: 2px solid grey;
+    background-color:rgb(255, 255, 255);
 }
