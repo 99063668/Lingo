@@ -7,9 +7,8 @@ var word1 = words[Math.round(Math.random() * words.length)];
 
 var container2 = document.getElementById("container2");
 
-var Array = [];
-var aantal_rijen = 5;
-var aantal_letters = 5;
+const aantal_rijen = 5;
+var aantal_letters = word1.length;
 var rij_nummer = 1;
 
 page();
@@ -23,7 +22,6 @@ function page() {
 
   createBoard(aantal_rijen, aantal_letters);
 }
-
 
 //Make rows
 function createBoard(aantal_rijen, aantal_letters){
@@ -72,17 +70,34 @@ Check.addEventListener("keyup", function(event){
 function CheckInput() {
   input = Check.value;
   /*console.log(CheckInput);*/
-  if(input.length ===5) {
+  if(input.length == word1.length) {
     for (var i=0; i<word1.length; i++){
       var letter2 = word1.charAt(i);
       var letter = input.charAt(i);
+
       document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).innerHTML = letter;
+
+      //controleren op letters/kleuren
+      if(input == word1){
+
+      }else{
+
+      }
     }
+
     rij_nummer++;
-  } else {
-    alert('Geen geldige invoer! Alleen 5 letter woorden zijn toegestaan.'); 
+  } else if (input.length != word1.length){
+    alert('Geen geldige invoer! Alleen '+ word1.length+' letter woorden zijn toegestaan.'); 
+  }else if (rij_nummer >= 5){
+    alert('U heeft geen pogingen meer om te raden!'); 
   }
 }
 
-
-/*document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).firstElementChild.innerHTML=word1[0];*/
+//Show first letter
+ShowLetter(0);
+function ShowLetter(index_letter){
+  for (var i = 0; i <aantal_rijen; i++) {
+    var letter2 = word1.charAt(index_letter);
+    document.getElementById("letter" + (index_letter + 1) + "rij" + (i + 1)).innerHTML = letter2;
+  }
+}
