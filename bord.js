@@ -91,7 +91,9 @@ function CheckInput() {
 
       if(input == word1){
         document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).style.backgroundColor= "green";
-        alert("U hebt het woord geraden!")
+        CheckWord.disabled=true;
+        Check.disabled=true;
+        document.getElementById("CheckWord").style.backgroundColor = "grey";
       }
 
       else if(letter == letter2){
