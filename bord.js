@@ -74,15 +74,14 @@ function CheckInput() {
     CheckWord.disabled=true;
     Check.disabled=true;
     document.getElementById("CheckWord").style.backgroundColor = "grey";
+  }
 
-
-  }else if(input.length != word1.length){
+  else if(input.length != word1.length){
     alert('Geen geldige invoer! Alleen '+ word1.length+' letter woorden zijn toegestaan.'); 
-
-  /*}else if(input.length == null){
-    alert("Ongeldige poging! Voer een woord in.");*/
     document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).innerHTML = letter;
-  }else if(input.length == word1.length) {
+  }
+
+  else if(input.length == word1.length) {
     for (var i=0; i<word1.length; i++){
       var letter2 = word1.charAt(i);
       var letter = input.charAt(i);
@@ -99,22 +98,18 @@ function CheckInput() {
         document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).style.backgroundColor= "green";
         copy = copy.replace(letter, "");
       }
+
       else if(copy.includes(letter)){
+        document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).style.borderRadius = "40px";
         document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).style.backgroundColor = "yellow";
         copy = copy.replace(letter, "");
-      }else{
+      }
+
+      else{
         document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).style.backgroundColor = "red";
       }
     }
   }
-  /*for (var i = 0; i < word1.length; i++) {
-    
-    // for (var a = 0; a< word1.length; a++) {
-    //   if(word1 != "" && word1 == input){
-    //     document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).style.backgroundColor = "yellow";
-    //   }
-    // }
-  }*/
   rij_nummer++;
 }
   
