@@ -82,21 +82,34 @@ function CheckInput() {
     for (var i=0; i<word1.length; i++){
       var letter2 = word1.charAt(i);
       var letter = input.charAt(i);
+      copy = word1;
 
       document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).innerHTML = letter;
+
       if(input == word1){
         document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).style.backgroundColor= "green";
       }
+
+      else if(letter == letter2){
+        document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).style.backgroundColor= "green";
+        copy = copy.replace(letter, "");
+      }
+      else if(copy.includes(letter)){
+        document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).style.backgroundColor = "yellow";
+        copy = copy.replace(letter, "");
+      }else{
+        document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).style.backgroundColor = "red";
+      }
     }
   }
-  for (var i = 0; i < word1.length; i++) {
+  /*for (var i = 0; i < word1.length; i++) {
     
     // for (var a = 0; a< word1.length; a++) {
     //   if(word1 != "" && word1 == input){
     //     document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).style.backgroundColor = "yellow";
     //   }
     // }
-  }
+  }*/
   rij_nummer++;
 }
   
