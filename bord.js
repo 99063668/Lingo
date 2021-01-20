@@ -70,14 +70,18 @@ Check.addEventListener("keyup", function(event){
 function CheckInput() {
   input = Check.value;
   if(rij_nummer > aantal_rijen){
-    alert('U heeft geen pogingen meer om te raden!'); 
+    alert("U heeft geen pogingen meer om te raden! Het woord was " + word1); 
+    CheckWord.disabled=true;
+    Check.disabled=true;
+    document.getElementById("CheckWord").style.backgroundColor = "grey";
+
 
   }else if(input.length != word1.length){
     alert('Geen geldige invoer! Alleen '+ word1.length+' letter woorden zijn toegestaan.'); 
 
   /*}else if(input.length == null){
     alert("Ongeldige poging! Voer een woord in.");*/
-
+    document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).innerHTML = letter;
   }else if(input.length == word1.length) {
     for (var i=0; i<word1.length; i++){
       var letter2 = word1.charAt(i);
@@ -88,6 +92,7 @@ function CheckInput() {
 
       if(input == word1){
         document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).style.backgroundColor= "green";
+        alert("U hebt het woord geraden!")
       }
 
       else if(letter == letter2){
