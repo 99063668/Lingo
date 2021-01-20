@@ -75,6 +75,9 @@ function CheckInput() {
   }else if(input.length != word1.length){
     alert('Geen geldige invoer! Alleen '+ word1.length+' letter woorden zijn toegestaan.'); 
 
+  /*}else if(input.length == null){
+    alert("Ongeldige poging! Voer een woord in.");*/
+
   }else if(input.length == word1.length) {
     for (var i=0; i<word1.length; i++){
       var letter2 = word1.charAt(i);
