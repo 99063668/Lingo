@@ -82,32 +82,43 @@ function CheckInput() {
   }
 
   else if(input.length == word1.length) {
+    copy = word1;
     for (var i=0; i<word1.length; i++){
       var letter2 = word1.charAt(i);
       var letter = input.charAt(i);
-      copy = word1;
 
       document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).innerHTML = letter;
 
       if(input == word1){
-        document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).style.backgroundColor= "green";
         CheckWord.disabled=true;
         Check.disabled=true;
         document.getElementById("CheckWord").style.backgroundColor = "grey";
       }
 
-      else if(letter == letter2){
+      //letter = letterwoord2 (geraden)
+      //letter2 = letterwoord (te raden)
+
+      if(letter2 == letter){
         document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).style.backgroundColor= "green";
         copy = copy.replace(letter, "");
       }
+    }
+    for (var i = 0; i < word1.length; i++) {
+      var letter2 = word1.charAt(i);
+      var letter = input.charAt(i);
 
-      else if(copy.includes(letter)){
+      if(copy.includes(letter)){
         document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).style.borderRadius = "40px";
         document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).style.backgroundColor = "yellow";
+        console.log("copy:" + copy);
+        console.log(copy.replace(letter, ""));
         copy = copy.replace(letter, "");
+        console.log("copy na: " +copy);
+        
+
       }
 
-      else{
+      else if(letter != letter2) {
         document.getElementById("letter" + (i + 1) + "rij" + rij_nummer).style.backgroundColor = "red";
       }
     }
